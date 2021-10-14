@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const ProjectsSection = props => {
 
@@ -65,8 +65,8 @@ const ProjectsSection = props => {
                             <p className="white project-title">{currentProject.title}</p>
                             <p className="white">{currentProject.text}</p>
                             <div className="a-container">
-                                <a href={currentProject.fLink} target="_blank">{currentProject.fLinkText}</a>
-                                <a style={{display: currentProject.displaySecond}} href={currentProject.sLink} target="_blank">{currentProject.sLinkText}</a>
+                                <a href={currentProject.fLink} target="_blank" rel="noreferrer">{currentProject.fLinkText}</a>
+                                <a style={{display: currentProject.displaySecond}} href={currentProject.sLink} target="_blank" rel="noreferrer">{currentProject.sLinkText}</a>
                             </div>
                         </div>
                     </div>

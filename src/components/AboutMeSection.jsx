@@ -26,15 +26,15 @@ const AboutMeSection = props => {
             <>
                 <h1>ABOUT ME</h1>
                 <div className='section-divider'>
-                    <img className='profile-img' src='./profile_picture.png' alt="Picture of myself" />
+                    <img className='profile-img' src='./profile_picture.png' alt="myself" />
                     <div className='text-container'>
                         <pre>
                         {dates.map(date=>
-                            <>
+                            <div key={date.fa}>
                             <span className="white">{date.fa}</span>
                             <span className="blue">{date.sa}</span>
                             <br/><br/>
-                            </>
+                            </div>
                         )}
                         </pre>
                     </div>

@@ -56,15 +56,15 @@ const ButtonContainer = (props) => {
     return (
         <div className='main-button-container-div'>
             <div className="fa-container only-mobile" onClick={openMenu}>
-                <i class="fas fa-bars"/>
+                <i className="fas fa-bars"/>
             </div>
             <div className={containerClass + menuOpened}>
                 <div className="fa-container only-mobile" onClick={openMenu} >
-                    <i class="fas fa-times"/>
+                    <i className="fas fa-times"/>
                 </div>
                 
                 {buttons.map(e => 
-                    <MenuButton id={e.id} text={e.text} clicked={e.clicked} onChangeSection={handleChangeSection}/>
+                    <MenuButton key={e.id} id={e.id} text={e.text} clicked={e.clicked} onChangeSection={handleChangeSection}/>
                 )}
             </div>
         </div>
