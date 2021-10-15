@@ -13,7 +13,9 @@ const Form = (props) => {
 
     const prevDef = e => {
         e.preventDefault();
-        props.handleSubmit(req)
+        if(req[0] && req[1] && req[2]){
+            props.handleSubmit(req)
+        }
     }
 
     return (
