@@ -6,7 +6,7 @@ const ContactSection = props => {
 
     const onSubmit = req => {
         axios
-            .get(`/sendcontact/${req[0]}/${req[1]}/${req[2]}`)
+            .get(`https://portfoliokrzysztof.herokuapp.com/sendcontact/${req[0]}/${req[1]}/${req[2]}`)
             .then(res => {
                 console.log(res);
                 setSubmitted(<h1 className='m-top'>We will answer you soon!</h1>);
