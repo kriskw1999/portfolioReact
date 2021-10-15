@@ -1,13 +1,20 @@
+import axios from "axios";
 import { useState } from "react";
 import Form from "./Form";
 
 const ContactSection = props => {
 
-    const onSubmit = e => {
-        e.preventDefault();
-        setSubmitted(
-            <h1 className='m-top'>We will answer you soon!</h1>
-        )
+    const onSubmit = req => {
+        axios
+            .get(`/sendcontact/${req[0]}/${req[1]}/${req[2]}`)
+            .then(res => {
+                console.log(res);
+                setSubmitted(<h1 className='m-top'>We will answer you soon!</h1>);
+            })
+            .catch(e => {
+                console.log(e);
+            })
+        
     }
 
 

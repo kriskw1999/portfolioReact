@@ -1,12 +1,28 @@
+import { useState } from "react";
+
 const Form = (props) => {
+
+    const [req, setReq] = useState(['','','']);
+
+    const handleChange = e => {
+        let arr = req;
+        arr[e.target.id] = e.target.value;
+        setReq(arr);
+    }
+
+    const prevDef = e => {
+        e.preventDefault();
+        props.handleSubmit(req)
+    }
+
     return (
-        <form className='form-request' autoComplete="off" onSubmit={props.handleSubmit}>
+        <form className='form-request' autoComplete="off" onSubmit={prevDef}>
             <label>Name:</label>
-            <input type='text'/>
+            <input id="0" type='text' text={req[1]} onChange={handleChange}/>
             <label>E-mail:</label>
-            <input type='email'/>
+            <input id="1" type='email' text={req[2]} onChange={handleChange}/>
             <label>Request:</label>
-            <textarea type='text' rows='2'/>
+            <textarea id="2" type='text' rows='2' value={req[3]} onChange={handleChange}/>
             <button type='submit'>SUBMIT</button>
         </form>
     )
