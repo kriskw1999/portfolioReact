@@ -7,6 +7,11 @@ const Form = (props) => {
 
     const handleChange = e => {
         let arr = req;
+        
+        if(!arr[0] || !arr[1] || arr[2]){
+            return console.log("empty field");
+        }
+        
         arr[e.target.id] = e.target.value;
         setReq(arr);
     }
