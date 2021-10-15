@@ -309,6 +309,7 @@ p.blue{
 }
 
 .projects-main-div{
+    width: 100%;
     min-height: 500px;
     display: flex;
     align-items: stretch;
@@ -327,6 +328,7 @@ p.blue{
 }
 
 .projects{
+    width: 90%;
     display: flex;
     justify-content: center;
     margin: 20px;
@@ -455,7 +457,8 @@ p.blue{
 
     /* Postbox */
     .main-div{
-        width: 100%;
+        width: 0;
+        height: 0;
     }
 
     .post-box{
@@ -573,6 +576,7 @@ p.blue{
     }
     .projects{
         margin:  5px;
+        width: 100%;
     }
 
     .project-displayed{

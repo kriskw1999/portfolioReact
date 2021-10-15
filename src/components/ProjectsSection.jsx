@@ -46,31 +46,26 @@ const ProjectsSection = props => {
     const [currentProject, setCurrentProject] = useState(projects[0]);
     const [opacityZero, setOpacityZero] = useState('');
 
-    const handleNextSection = () => {
+    const handleSectionChange = side => {
+
         setOpacityZero('opacity-zero');
+
         setTimeout(() => {
-            if(projects.length-1 === currentProject.id){
-                console.log('a');
-                setCurrentProject(projects[0]);
-            } else {
-                setCurrentProject(projects[currentProject.id+1]);
+            if(side === 'next'){
+                if(projects.length-1 === currentProject.id){
+                    setCurrentProject(projects[0]);
+                } else {
+                    setCurrentProject(projects[currentProject.id+1]);
+                }
+            } else if(side === 'previous'){
+                if(currentProject.id === 0){
+                    setCurrentProject(projects[projects.length-1]);
+                } else {
+                    setCurrentProject(projects[currentProject.id-1]);
+                } 
             }
             setOpacityZero('');  
         }, 410);
-    }
-
-    const handlePreviousSection = () => {
-        setOpacityZero('opacity-zero');
-        setTimeout(() => {
-            if(currentProject.id === 0){
-                console.log('a');
-                setCurrentProject(projects[projects.length-1]);
-            } else {
-                setCurrentProject(projects[currentProject.id-1]);
-            } 
-            setOpacityZero('');  
-        }, 410);
-        
     }
 
     if(props.displays){
@@ -78,7 +73,7 @@ const ProjectsSection = props => {
             <div className="projects-container">
                 <h1>PROJECTS</h1>
                 <div className="projects-main-div">
-                    <i className="fas fa-chevron-left only-desktop" onClick={handlePreviousSection}/>
+                    <i className="fas fa-chevron-left only-desktop" onClick={() => handleSectionChange("previous")}/>
                     <div className="projects">
                         <div className={"project-displayed " + opacityZero}>
                             <p className="white project-title">{currentProject.title}</p>
@@ -89,9 +84,9 @@ const ProjectsSection = props => {
                             </div>
                         </div>
                     </div>
-                    <i className="fas fa-chevron-right only-desktop"  onClick={handleNextSection}/>
+                    <i className="fas fa-chevron-right only-desktop"  onClick={() => handleSectionChange("next")}/>
                 </div>
-                <button className="only-mobile next-project" onClick={handleNextSection}>Next</button>
+                <button className="only-mobile next-project" onClick={() => handleSectionChange("next")}>Next</button>
             </div>
         );
     }else
