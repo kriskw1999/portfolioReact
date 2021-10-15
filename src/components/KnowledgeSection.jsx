@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Displays all the knowledge information
 const KnowledgeSection = props => {
 
     const [buttonClicked,setButtonClicked] = useState([true,false,false,false,false,false]);
@@ -26,13 +27,13 @@ const KnowledgeSection = props => {
             text: 'I know how to style, position and animate each element. I also know to adapt each style to the various devices',
         }, {
             title: 'Github',
-            text: 'I am able to use a version control application like git using pull forks etc.',
+            text: 'I am able to use a version control application like git, solving merging issues and creating high quality commits.',
         }, {
             title: 'Java',
-            text: 'I each concept of java language, I programmed a lot withandroid studio both by using Java and Kotlin',
+            text: 'I know each concept of java language, I programmed a lot with android studio. Into my projects you can also find an application written in kotlin called Listener.',
         }, {
             title: 'React',
-            text: 'I feel comfortable with React framework and all its concepts. I am able to perform tests and to write code with hooks and OOP.',
+            text: 'I feel comfortable with React framework and all its concepts. I am able to perform tests and to write code with hooks and OOP. I also know how to perform testing and fetching remote API.',
         }
     ]
 

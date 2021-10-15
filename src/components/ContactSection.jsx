@@ -2,8 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import Form from "./Form";
 
+// Contact section that handles the request and send it to the backend server
 const ContactSection = props => {
 
+    // onSubmit the function calls the backend server with the form content
     const onSubmit = req => {
         axios
             .get(`https://portfoliokrzysztof.herokuapp.com/sendcontact/${req[0]}/${req[1]}/${req[2]}`)
@@ -13,6 +15,7 @@ const ContactSection = props => {
             })
             .catch(e => {
                 console.log(e);
+                setSubmitted(<h1 className='m-top'>An error occured...</h1>);
             })
         
     }

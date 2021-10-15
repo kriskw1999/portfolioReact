@@ -1,5 +1,6 @@
 import {useState } from "react";
 
+// Displays all the projects
 const ProjectsSection = props => {
 
     const projects = [

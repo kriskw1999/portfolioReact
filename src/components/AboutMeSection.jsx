@@ -1,5 +1,6 @@
 import '../styles/mainStyles.css'
 
+// About section displays all my personal information
 const AboutMeSection = props => {
 
     const dates = [

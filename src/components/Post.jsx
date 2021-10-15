@@ -5,6 +5,7 @@ import KnowledgeSection from './KnowledgeSection';
 import ContactSection from './ContactSection';
 import React, { useState } from 'react';
 
+// Display container button and all sections
 const Post = () => {
 
     const [toDisplay, setToDisplay] = useState([{clicked:true},{clicked:false},{clicked:false},{clicked:false}]);

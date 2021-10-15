@@ -6,6 +6,7 @@ import KnowledgeSection from './KnowledgeSection';
 import ProjectsSection from './ProjectsSection';
 import '../styles/mainStyles.css';
 
+// Contains all the section buttons 
 const ButtonContainer = (props) => {
 
     let [menuOpened, setMenuOpened] = useState(false);
