@@ -22,6 +22,24 @@ const ProjectsSection = props => {
             sLink: '',
             sLinkText: 'Github',
             displaySecond: 'none',
+        },{
+            id: 2,
+            title: 'React Portfolio Frontend',
+            text: "You can find the link to the github repository of this project in the lik below.",
+            fLink: 'https://github.com/kriskw1999/portfolioReact/',
+            fLinkText: 'Github',
+            sLink: '',
+            sLinkText: 'Github',
+            displaySecond: 'none',
+        },{
+            id: 3,
+            title: 'React Portfolio Backend',
+            text: "The backend allows to the user to send emails to me. The server repository is hosted on Heroku.",
+            fLink: 'https://github.com/kriskw1999/PortfolioBackend/',
+            fLinkText: 'Github',
+            sLink: '',
+            sLinkText: 'Github',
+            displaySecond: 'none',
         }
     ];
 
@@ -57,10 +75,10 @@ const ProjectsSection = props => {
 
     if(props.displays){
         return(
-            <>
+            <div className="projects-container">
                 <h1>PROJECTS</h1>
                 <div className="projects-main-div">
-                    <i class="fas fa-chevron-left" onClick={handlePreviousSection}/>
+                    <i className="fas fa-chevron-left only-desktop" onClick={handlePreviousSection}/>
                     <div className="projects">
                         <div className={"project-displayed " + opacityZero}>
                             <p className="white project-title">{currentProject.title}</p>
@@ -71,9 +89,10 @@ const ProjectsSection = props => {
                             </div>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right"  onClick={handleNextSection}/>
+                    <i className="fas fa-chevron-right only-desktop"  onClick={handleNextSection}/>
                 </div>
-            </>
+                <button className="only-mobile next-project">Next</button>
+            </div>
         );
     }else
         return null;
