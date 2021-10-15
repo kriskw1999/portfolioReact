@@ -91,7 +91,7 @@ const ProjectsSection = props => {
                     </div>
                     <i className="fas fa-chevron-right only-desktop"  onClick={handleNextSection}/>
                 </div>
-                <button className="only-mobile next-project">Next</button>
+                <button className="only-mobile next-project" onClick={handleNextSection}>Next</button>
             </div>
         );
     }else
